@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbxdhy46f35ns"
-path="res://.godot/imported/bone.png-f51661bbdc082106c89672ea2515895f.ctex"
+uid="uid://vq6pd2lepyj1"
+path="res://.godot/imported/man11.png-a9430a62faf8752ade58a9c0569711dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/bone.png"
-dest_files=["res://.godot/imported/bone.png-f51661bbdc082106c89672ea2515895f.ctex"]
+source_file="res://Assets/Images/man/man11.png"
+dest_files=["res://.godot/imported/man11.png-a9430a62faf8752ade58a9c0569711dd.ctex"]
 
 [params]
 

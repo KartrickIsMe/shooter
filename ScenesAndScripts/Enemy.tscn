@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bh4nhe6fqcouq"]
+
+[ext_resource type="Texture2D" uid="uid://wlnbsrtn3vfm" path="res://Assets/Images/man/man.png" id="1_n88cm"]
+[ext_resource type="Script" uid="uid://byo1jn46fq2xt" path="res://ScenesAndScripts/Enemy.gd" id="1_wignu"]
+[ext_resource type="Texture2D" uid="uid://05igk0vq1oj" path="res://Assets/Images/man/man13.png" id="9_6cc1u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3jg8h"]
+radius = 24.94
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58efn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n88cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6cc1u")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1923475542]
+script = ExtResource("1_wignu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1116013116]
+shape = SubResource("CircleShape2D_3jg8h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=855122226]
+position = Vector2(11, 0)
+scale = Vector2(1.355, 1.355)
+sprite_frames = SubResource("SpriteFrames_58efn")
+frame_progress = 0.34548166

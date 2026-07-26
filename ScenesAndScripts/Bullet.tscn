@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dgskx208w4hl7"]
+
+[ext_resource type="Script" uid="uid://b12mmywuqv1p3" path="res://ScenesAndScripts/Bullet.gd" id="1_yf0og"]
+[ext_resource type="Texture2D" uid="uid://csp0c1er0f2wv" path="res://Assets/Images/fire.png" id="2_xsjl2"]
+[ext_resource type="Texture2D" uid="uid://dhqalmh62j4us" path="res://Assets/Images/f1_yay.png" id="2_yf0og"]
+[ext_resource type="Texture2D" uid="uid://bx0gxx81wsnan" path="res://Assets/Images/fire2.png" id="4_1nyo8"]
+[ext_resource type="Texture2D" uid="uid://dhvcd6lh4dy3g" path="res://Assets/Images/fire3.png" id="5_efaom"]
+[ext_resource type="Texture2D" uid="uid://btahuwyjyfbxy" path="res://Assets/Images/fire4.png" id="6_4wtxv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_58efn"]
+radius = 14.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3jg8h"]
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+initial_velocity_min = 507.69
+initial_velocity_max = 507.69
+gravity = Vector3(0, 0, 0)
+scale_min = 0.47
+scale_max = 0.47
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3jg8h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1nyo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_efaom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4wtxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xsjl2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bullet" type="Area2D" unique_id=2056832633]
+script = ExtResource("1_yf0og")
+
+[node name="Shape" type="CollisionShape2D" parent="." unique_id=481731630]
+shape = SubResource("CircleShape2D_58efn")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1127102717]
+amount = 89
+texture = ExtResource("2_yf0og")
+lifetime = 2.1399999999999997
+visibility_rect = Rect2(-20000, -20000, 20000, 20000)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_3jg8h")
+
+[node name="AnimatedFire" type="AnimatedSprite2D" parent="." unique_id=1693371291]
+position = Vector2(-0.103975296, -0.003490448)
+rotation = -0.7853982
+scale = Vector2(0.02, 0.02)
+sprite_frames = SubResource("SpriteFrames_3jg8h")
+frame_progress = 0.7728024
+speed_scale = 3.5
+offset = Vector2(-50, -300)

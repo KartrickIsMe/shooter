@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dcsrpbsm2b7mm"]
 
-[ext_resource type="Script" uid="uid://chvcuigdkmf77" path="res://Scenes/Main.gd" id="1_jbe4v"]
-[ext_resource type="PackedScene" uid="uid://dgybrh0wrg8nx" path="res://Scenes/Player.tscn" id="2_idj7w"]
-[ext_resource type="Texture2D" uid="uid://b43wnv841f8y" path="res://Images/background.png" id="3_kln2b"]
-[ext_resource type="Texture2D" uid="uid://sirtoj1eeahd" path="res://Images/Border.webp" id="4_rgh2o"]
+[ext_resource type="Script" uid="uid://chvcuigdkmf77" path="res://ScenesAndScripts/Main.gd" id="1_jbe4v"]
+[ext_resource type="PackedScene" uid="uid://dgybrh0wrg8nx" path="res://ScenesAndScripts/Player.tscn" id="2_idj7w"]
+[ext_resource type="Texture2D" uid="uid://b43wnv841f8y" path="res://Assets/Images/background.png" id="3_kln2b"]
+[ext_resource type="Texture2D" uid="uid://sirtoj1eeahd" path="res://Assets/Images/Border.webp" id="4_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://bh4nhe6fqcouq" path="res://ScenesAndScripts/Enemy.tscn" id="5_mg0sr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58efn"]
 distance = 1.0
@@ -62,3 +63,6 @@ position = Vector2(1736, 256)
 rotation = -3.1415925
 scale = Vector2(2.0958335, 0.79531056)
 texture = ExtResource("4_rgh2o")
+
+[node name="Enemy" parent="." unique_id=1923475542 instance=ExtResource("5_mg0sr")]
+position = Vector2(3864, 2112)

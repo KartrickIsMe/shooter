@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dgybrh0wrg8nx"]
 
-[ext_resource type="Script" uid="uid://c8iwi2xgiqdx6" path="res://Scripts/Player.gd" id="1_gntrk"]
-[ext_resource type="Texture2D" uid="uid://bbxdhy46f35ns" path="res://Images/bone.png" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://pnt2h3e1al2g" path="res://Images/dog.png" id="1_rpqav"]
+[ext_resource type="Script" uid="uid://c8iwi2xgiqdx6" path="res://ScenesAndScripts/Player.gd" id="1_2mdkp"]
+[ext_resource type="Texture2D" uid="uid://bbxdhy46f35ns" path="res://Assets/Images/bone.png" id="2_2mdkp"]
+[ext_resource type="Texture2D" uid="uid://pnt2h3e1al2g" path="res://Assets/Images/dog.png" id="3_a6a6y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3jg8h"]
 radius = 20.0
@@ -20,13 +20,13 @@ scale_min = 0.03
 scale_max = 0.03
 
 [node name="Player" type="CharacterBody2D" unique_id=863751832 groups=["player"]]
-script = ExtResource("1_gntrk")
+script = ExtResource("1_2mdkp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2121167699]
 shape = SubResource("CircleShape2D_3jg8h")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1533586047]
-texture = ExtResource("1_kyqiw")
+texture = ExtResource("2_2mdkp")
 process_material = SubResource("ParticleProcessMaterial_3jg8h")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=760824850]
@@ -36,7 +36,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 rotation = 1.5707964
 pivot_offset = Vector2(20, 20)
-texture = ExtResource("1_rpqav")
+texture = ExtResource("3_a6a6y")
 expand_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=112526151]
