@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dgybrh0wrg8nx"]
+
+[ext_resource type="Script" uid="uid://c8iwi2xgiqdx6" path="res://Scripts/Player.gd" id="1_gntrk"]
+[ext_resource type="Texture2D" uid="uid://bbxdhy46f35ns" path="res://Images/bone.png" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://pnt2h3e1al2g" path="res://Images/dog.png" id="1_rpqav"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3jg8h"]
+radius = 20.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3jg8h"]
+particle_flag_disable_z = true
+angle_min = 1.0728835e-05
+angle_max = 99.80001
+spread = 180.0
+initial_velocity_max = 173.26999
+angular_velocity_min = 170.74998
+angular_velocity_max = 265.83997
+gravity = Vector3(0, 0, 0)
+scale_min = 0.03
+scale_max = 0.03
+
+[node name="Player" type="CharacterBody2D" unique_id=863751832 groups=["player"]]
+script = ExtResource("1_gntrk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2121167699]
+shape = SubResource("CircleShape2D_3jg8h")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1533586047]
+texture = ExtResource("1_kyqiw")
+process_material = SubResource("ParticleProcessMaterial_3jg8h")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=760824850]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+rotation = 1.5707964
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("1_rpqav")
+expand_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=112526151]
+zoom = Vector2(1.58, 1.58)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.495

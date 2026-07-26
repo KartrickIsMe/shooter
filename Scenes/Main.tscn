@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dcsrpbsm2b7mm"]
+
+[ext_resource type="Script" uid="uid://chvcuigdkmf77" path="res://Scenes/Main.gd" id="1_jbe4v"]
+[ext_resource type="PackedScene" uid="uid://dgybrh0wrg8nx" path="res://Scenes/Player.tscn" id="2_idj7w"]
+[ext_resource type="Texture2D" uid="uid://b43wnv841f8y" path="res://Images/background.png" id="3_kln2b"]
+[ext_resource type="Texture2D" uid="uid://sirtoj1eeahd" path="res://Images/Border.webp" id="4_rgh2o"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58efn"]
+distance = 1.0
+
+[node name="Environment" type="Node2D" unique_id=1177174236]
+script = ExtResource("1_jbe4v")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=544918689]
+position = Vector2(3748.5002, 2256)
+scale = Vector2(9.368751, 9.024)
+texture = ExtResource("3_kln2b")
+
+[node name="Player" parent="." unique_id=863751832 instance=ExtResource("2_idj7w")]
+position = Vector2(3336, 2256)
+
+[node name="World Border" type="StaticBody2D" parent="." unique_id=392019887]
+
+[node name="Upper Border" type="CollisionShape2D" parent="World Border" unique_id=1192144541]
+position = Vector2(468, 431)
+rotation = -3.1415927
+shape = SubResource("WorldBoundaryShape2D_58efn")
+
+[node name="Border" type="Sprite2D" parent="World Border/Upper Border" unique_id=737374066]
+position = Vector2(-3252.9998, 267.99973)
+rotation = -3.1415925
+scale = Vector2(3.8958337, 0.8353119)
+texture = ExtResource("4_rgh2o")
+
+[node name="Left Border" type="CollisionShape2D" parent="World Border" unique_id=1061437189]
+position = Vector2(468, 431)
+rotation = -4.712389
+shape = SubResource("WorldBoundaryShape2D_58efn")
+
+[node name="Border" type="Sprite2D" parent="World Border/Left Border" unique_id=681115536]
+position = Vector2(1801, 203.99997)
+rotation = -3.1415925
+scale = Vector2(2.0958335, 0.6353119)
+texture = ExtResource("4_rgh2o")
+
+[node name="Bottom Border" type="CollisionShape2D" parent="World Border" unique_id=857667665]
+position = Vector2(6728, 3808)
+shape = SubResource("WorldBoundaryShape2D_58efn")
+
+[node name="Border" type="Sprite2D" parent="World Border/Bottom Border" unique_id=38005917]
+position = Vector2(-2999.9998, 232)
+scale = Vector2(3.8958337, 0.71531296)
+texture = ExtResource("4_rgh2o")
+
+[node name="Right Border" type="CollisionShape2D" parent="World Border" unique_id=1231257828]
+position = Vector2(6728, 3808)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_58efn")
+
+[node name="Border" type="Sprite2D" parent="World Border/Right Border" unique_id=1727662549]
+position = Vector2(1736, 256)
+rotation = -3.1415925
+scale = Vector2(2.0958335, 0.79531056)
+texture = ExtResource("4_rgh2o")
