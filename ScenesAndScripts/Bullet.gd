@@ -1,15 +1,14 @@
 extends Area2D
 
-@export var speed = 1200
-@export var lifeTime = 10
-var direction
+@export var speed: float = 1200.0
+@export var lifeTime: int = 10
+@onready var direction: Vector2 = Vector2.RIGHT.rotated(rotation)
+@onready var A_fire = $AnimatedFire
 var velocity
-var A_fire
+
 
 func _ready() -> void:
 	print("BULLET ENTERED THE SCENE")
-	direction = Vector2.RIGHT.rotated(rotation)
-	A_fire = $AnimatedFire
 	velocity = direction * speed
 	A_fire.play("default")
 	var life_timer = Timer.new()
@@ -23,3 +22,11 @@ func _physics_process(delta: float) -> void:
 
 func remove() -> void:
 	queue_free()
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		return
+	if body.has_method("hurt"):
+		body.hurt()
+	else:
+		queue_free()

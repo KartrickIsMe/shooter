@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed := 1000
+@export var speed: float = 1000.0
 const bullet_scene = preload("res://ScenesAndScripts/Bullet.tscn")
 
 func _ready() -> void:

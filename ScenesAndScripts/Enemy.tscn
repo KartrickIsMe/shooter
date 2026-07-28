@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://05igk0vq1oj" path="res://Assets/Images/man/man13.png" id="9_6cc1u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3jg8h"]
-radius = 24.94
+radius = 25.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_58efn"]
 animations = [{
@@ -24,6 +24,11 @@ animations = [{
 [node name="Enemy" type="CharacterBody2D" unique_id=1923475542]
 script = ExtResource("1_wignu")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1727970074]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=901858726]
+shape = SubResource("CircleShape2D_3jg8h")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1116013116]
 shape = SubResource("CircleShape2D_3jg8h")
 
@@ -31,4 +36,6 @@ shape = SubResource("CircleShape2D_3jg8h")
 position = Vector2(11, 0)
 scale = Vector2(1.355, 1.355)
 sprite_frames = SubResource("SpriteFrames_58efn")
-frame_progress = 0.34548166
+frame_progress = 0.9815085
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1185772025]

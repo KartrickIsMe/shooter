@@ -16,8 +16,8 @@ direction = Vector3(-1, 0, 0)
 initial_velocity_min = 507.69
 initial_velocity_max = 507.69
 gravity = Vector3(0, 0, 0)
-scale_min = 0.47
-scale_max = 0.47
+scale_min = 0.22
+scale_max = 0.22
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3jg8h"]
 animations = [{
@@ -61,3 +61,5 @@ sprite_frames = SubResource("SpriteFrames_3jg8h")
 frame_progress = 0.7728024
 speed_scale = 3.5
 offset = Vector2(-50, -300)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
